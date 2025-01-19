@@ -1,0 +1,62 @@
+.App {
+  width: 100%;
+  height: 100vh;
+}
+.wrapper_content {
+  max-width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+  border-left: 1px solid rgba(0, 0, 0, .1);
+  border-right: 1px solid rgba(0, 0, 0, .1);
+  position: relative;
+}
+.history_date {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  z-index: 2;
+  h1 {
+    position: relative;
+    padding-left: 40px;
+    max-width: 80%;
+    font-size: calc((2vw + 2vh)* 1);
+    color: #42567A;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 5px;
+      background: linear-gradient(#3877EE, #EF6DA8);
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .wrapper_content {
+    max-width: 95%;
+  }
+  .history_date {
+    top: 10px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .history_date h1 {
+    padding: 0;
+    margin-top: 30px;
+    &::after {
+      display: none;
+    }
+  } 
+  .wrapper_content {
+    border: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .history_date h1 {
+    font-size: calc((1vw + 1vh)* 3);
+  }
+}
